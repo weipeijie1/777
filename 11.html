@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 11. 给定任意一个数字数组和目标值 target, 找出数组两个元素之和等于 target 的下标数组例子: [1,2,3,4] 、 2 => null例子: [1,2,3,4] 、 3 => [0, 1]
+
+    let nums = [1, 2, 3, 4];
+let target = 3;  
+let map = new Map();  
+
+let result = null;  
+
+for (let i = 0; i < nums.length; i++) {
+  let complement = target - nums[i]; 
+
+  if (map.has(complement)) {
+    result = [map.get(complement), i];
+    break; 
+  }
+  map.set(nums[i], i);
+}
+
+console.log(result);
+</script>
+</html>

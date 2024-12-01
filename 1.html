@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// 1. 请编写一段逻辑将任意数字数组处理后返回一个新数组，其中不包含任何重复的元素。例子: [1,2,3,4,2,1] => [1,2,3,4]
+var arr=prompt("请输入");
+var arr1=[];
+for(var i=0;i<arr.length;i++){
+  var isRepeated = false;
+  for (var j=0;j<arr1.length;j++){
+    if(arr1[j]===arr[i]){
+        isRepeated = true;
+        break;
+    }
+  }
+  if (!isRepeated){
+    arr1.push(arr[i]);
+  }
+}
+alert(arr1);
+</script>
+</html>

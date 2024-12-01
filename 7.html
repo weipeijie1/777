@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 7. 请编写一段逻辑将包含嵌套数组的数组处理后返回一个新数组，其中所有元素都被扁平化到同一层级。例子: [1,[2,[3]]] => [1,2,3]
+    
+    function flatten(arr) {
+  let result = [];
+  arr.forEach(item => {
+    if (Array.isArray(item)) {
+      result = result.concat(flatten(item)); 
+    } else {
+      result.push(item);
+    }
+  });
+  
+  return result;
+}
+
+let arr = [1, [2, [3]]];
+let flattenedArray = flatten(arr);
+console.log(flattenedArray);
+
+</script>
+</html>
